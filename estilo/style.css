@@ -4,6 +4,92 @@
     margin : 0;
     padding: 0;
 }
-body{
-    background-color: aquamarine;
+:root{
+    --fonte1: verdana,geneva,tahoma,sans-serif;
+    --fonte2: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+html, body{
+    min-height: 100vh;
+    background-color: darkgrey;
+}
+header{
+    background-color: black;
+    color: white;
+
+}
+header > h1{
+   
+    padding-top: 50px;
+    font-family: var(--fonte1);
+    font-size: 1.4em;
+
+}
+header > h2{
+    padding-bottom: 20px;
+    font-variant: small-caps;
+    font-family: var(--fonte2);
+    font-size: 6vw;
+    text-align: center;
+}
+section{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    line-height: 2em;
+    padding-left: 30px;
+}
+section > pre{
+    font-family: var(--fonte2);
+    font-size: 3.5vw;
+    text-align: start;
+    padding-bottom: 2em;
+
+
+}
+section.normal{
+    background-color: white;
+    text-align: right;
+}
+section.imagem{
+    background-color:darkgrey ;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.404);
+    background-attachment: fixed;
+    background-size: cover;
+}
+section.imagem > pre{
+    display: inline-block;
+    padding: 30px;
+    background-color:rgba(0, 0, 0, 0.281) ;
+    color: white;
+    text-shadow: 1px 1px 1px  black;
+}
+section#img01{
+    background-image: url(imgs/background002.jpg);
+    background-position: right center;
+   
+}
+section#img02{
+    background-image: url(imgs/imagem00.jpg);
+    background-position: center center;
+    
+}
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-family: var(--fonte1);
+    font-size: 0.9em;
+}
+a{
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+a:hover{
+    text-decoration: underline;
+}
+a:focus {
+    outline: 2px solid yellow;
+    outline-offset: 3px;
 }
