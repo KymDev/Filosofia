@@ -37,13 +37,14 @@ section{
     line-height: 2em;
     padding-left: 30px;
 }
-section > pre{
+section > pre {
     font-family: var(--fonte2);
     font-size: 3.5vw;
     text-align: start;
     padding-bottom: 2em;
-
-
+    letter-spacing: 0.05em;
+    line-height: 1.2em; 
+    margin-bottom: 20px;
 }
 section.normal{
     background-color: white;
