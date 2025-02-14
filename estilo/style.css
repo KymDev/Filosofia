@@ -1,96 +1,158 @@
 @charset "UTF-8";
 
-*{
-    margin : 0;
+* {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-:root{
-    --fonte1: verdana,geneva,tahoma,sans-serif;
+
+:root {
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif;
     --fonte2: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --cor-fundo: darkgrey;
+    --cor-texto: black;
+    --cor-destaque: white;
 }
-html, body{
+
+body {
     min-height: 100vh;
-    background-color: darkgrey;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte1);
 }
-header{
+
+header {
+    background-color: black;
+    color: var(--cor-destaque);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 1.8em;
+}
+
+header .autor {
+    font-size: 1em;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+header h2 {
+    font-family: var(--fonte2);
+    font-size: 4vw;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* Seções normais */
+section.normal {
+    background-color: var(--cor-destaque);
+    padding: 5vh 10vw;
+    text-align: center;
+    font-size: 1.8vw;
+    line-height: 1.6em;
+}
+
+/* Seções de Parallax */
+section.parallax {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-destaque);
+    text-shadow: 2px 2px 5px black;
+    font-size: 2vw;
+    font-weight: bold;
+    text-align: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Imagens para o Parallax */
+#img01 {
+    background-image: url('imgs/background002.jpg');
+}
+
+#img02 {
+    background-image: url('imgs/imagem00.jpg');
+}
+
+/* Seção do Leitor */
+section.leitor {
     background-color: black;
     color: white;
-
-}
-header > h1{
-   
-    padding-top: 50px;
-    font-family: var(--fonte1);
-    font-size: 1.4em;
-
-}
-header > h2{
-    padding-bottom: 20px;
-    font-variant: small-caps;
-    font-family: var(--fonte2);
-    font-size: 6vw;
     text-align: center;
+    padding: 40px;
+    font-size: 1.5vw;
 }
-section{
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    line-height: 2em;
-    padding-left: 30px;
+.leitor p {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
-section > pre {
-    font-family: var(--fonte2);
-    font-size: 3.5vw;
-    text-align: start;
-    padding-bottom: 2em;
-    letter-spacing: 0.05em;
-    line-height: 1.2em; 
-    margin-bottom: 20px;
-}
-section.normal{
-    background-color: white;
-    text-align: right;
-}
-section.imagem{
-    background-color:darkgrey ;
-    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.404);
-    background-attachment: fixed;
-    background-size: cover;
-}
-section.imagem > pre{
-    display: inline-block;
-    padding: 30px;
-    background-color:rgba(0, 0, 0, 0.281) ;
-    color: white;
-    text-shadow: 1px 1px 1px  black;
-}
-section#img01{
-    background-image: url(imgs/background002.jpg);
-    background-position: right center;
-   
-}
-section#img02{
-    background-image: url(imgs/imagem00.jpg);
-    background-position: center center;
-    
-}
-footer{
+
+/* Rodapé */
+footer {
     background-color: black;
     color: white;
     text-align: center;
     padding: 10px;
-    font-family: var(--fonte1);
     font-size: 0.9em;
 }
-a{
-    color: white;
+
+footer a {
+    color: yellow;
     text-decoration: none;
-    font-weight: bolder;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
 }
-a:hover{
+
+footer a:hover {
     text-decoration: underline;
+    color: orange;
 }
-a:focus {
-    outline: 2px solid yellow;
-    outline-offset: 3px;
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h2 {
+        font-size: 5vw;
+    }
+
+    section {
+        font-size: 3vw;
+        padding: 5vh 5vw;
+    }
+
+    section.leitor {
+        font-size: 2.5vw;
+    }
+
+    section.parallax {
+        height: 40vh;
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.4em;
+    }
+
+    header h2 {
+        font-size: 6vw;
+    }
+
+    section {
+        font-size: 4vw;
+    }
+
+    section.leitor {
+        font-size: 3vw;
+    }
+
+    section.parallax {
+        height: 35vh;
+        font-size: 4vw;
+    }
 }
